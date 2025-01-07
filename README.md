@@ -18,16 +18,13 @@ Aplikasi Kasir Sederhana adalah program berbasis console yang dibuat menggunakan
 
 ## Cara Menggunakan
 
-1. Clone repositori ini ke komputer Anda:
+1. download TugasAkhirAlgoritma.exe yang ada dalam repository ini.
    ```bash
-   git clone https://github.com/username/repository-name.git
+   TugasAkhirAlgoritma.exe
    ```
-2. Buka proyek di IDE Java pilihan Anda atau kompilasi dan jalankan file Java menggunakan terminal.
-   ```bash
-   javac Main.java
-   java Main
-   ```
-3. Ikuti petunjuk pada aplikasi untuk melakukan transaksi.
+2. Aplikasi dapat digunakan secara langsung.
+3. Jika ada peringatan dari windows.
+4. Klik more info, lalu run anyway.
 
 ## Struktur Proyek
 
