@@ -1,0 +1,169 @@
+Start
+
+// Inisialisasi variabel
+isRunning ← true
+listTransaksi ← array kosong
+listProduk ← array dengan data produk awal
+
+// Fungsi utama
+While isRunning do
+    Call showMenu()
+End While
+
+// Fungsi untuk menampilkan menu
+Function showMenu()
+    Print "Pilih menu yang tersedia:"
+    Print "[1] Lihat semua transaksi"
+    Print "[2] Buat transaksi"
+    Print "[3] Edit transaksi"
+    Print "[4] Hapus transaksi"
+    Print "[5] Hapus semua transaksi"
+    Print "[6] Clear layar"
+    Print "[7] Keluar"
+    selectedMenu ← Input angka
+
+    Switch selectedMenu
+        Case 1:
+            Call showAllTransaksi()
+        Case 2:
+            Call buatTransaksi()
+        Case 3:
+            Call editTransaksi()
+        Case 4:
+            Call hapusTransaksi()
+        Case 5:
+            Call hapusAll()
+        Case 6:
+            Call clearConsole()
+        Case 7:
+            Call keluar()
+        Default:
+            Print "Pilihan salah!"
+    End Switch
+End Function
+
+// Fungsi untuk melihat semua transaksi
+Function showAllTransaksi()
+    If listTransaksi tidak kosong then
+        For setiap transaksi dalam listTransaksi do
+            Print data transaksi
+        End For
+    Else
+        Print "Belum ada transaksi"
+    End If
+End Function
+
+// Fungsi untuk membuat transaksi baru
+Function buatTransaksi()
+    ulang ← true
+    While ulang do
+        nama ← Input "Masukkan nama pelanggan"
+        Call printProduk()
+        idProduk ← Input angka
+        jumlah ← Input angka
+        tanggal ← Input tanggal (format: dd-MM-yyyy atau gunakan tanggal hari ini)
+        Tambahkan transaksi baru ke listTransaksi
+        Print "Transaksi berhasil ditambahkan"
+        ulang ← Input "Tambah transaksi lagi? (y/t)" = "y"
+    End While
+End Function
+
+// Fungsi untuk mengedit transaksi
+Function editTransaksi()
+    If listTransaksi tidak kosong then
+        Call showAllTransaksi()
+        index ← Input "Pilih nomor transaksi"
+        If index valid then
+            Print "Pilih kolom yang ingin diubah"
+            kolom ← Input angka
+            Switch kolom
+                Case 1:
+                    namaBaru ← Input "Masukkan nama baru"
+                    Ubah nama transaksi
+                Case 2:
+                    Call printProduk()
+                    produkBaru ← Input angka
+                    Ubah produk transaksi
+                Case 3:
+                    jumlahBaru ← Input angka
+                    Ubah jumlah transaksi
+                Case 4:
+                    tanggalBaru ← Input tanggal
+                    Ubah tanggal transaksi
+                Default:
+                    Print "Pilihan kolom tidak valid"
+            End Switch
+            Print "Data berhasil diubah"
+        Else
+            Print "Nomor transaksi tidak ditemukan"
+        End If
+    Else
+        Print "Belum ada transaksi"
+    End If
+End Function
+
+// Fungsi untuk menghapus transaksi
+Function hapusTransaksi()
+    If listTransaksi tidak kosong then
+        Call showAllTransaksi()
+        index ← Input "Pilih nomor transaksi untuk dihapus"
+        If index valid then
+            konfirmasi ← Input "Yakin ingin menghapus? (y/t)"
+            If konfirmasi = "y" then
+                Hapus transaksi dari listTransaksi
+                Print "Data berhasil dihapus"
+            Else
+                Print "Data tidak jadi dihapus"
+            End If
+        Else
+            Print "Nomor transaksi tidak ditemukan"
+        End If
+    Else
+        Print "Belum ada transaksi"
+    End If
+End Function
+
+// Fungsi untuk menghapus semua transaksi
+Function hapusAll()
+    If listTransaksi tidak kosong then
+        konfirmasi ← Input "Yakin ingin menghapus semua data? (y/t)"
+        If konfirmasi = "y" then
+            Kosongkan listTransaksi
+            Print "Semua data berhasil dihapus"
+        Else
+            Print "Data tidak jadi dihapus"
+        End If
+    Else
+        Print "Data sudah kosong"
+    End If
+End Function
+
+// Fungsi untuk keluar dari aplikasi
+Function keluar()
+    konfirmasi ← Input "Yakin ingin keluar? (y/t)"
+    If konfirmasi = "y" then
+        isRunning ← false
+    End If
+End Function
+
+// Fungsi untuk mencetak daftar produk
+Function printProduk()
+    For setiap produk dalam listProduk do
+        Print data produk
+    End For
+End Function
+
+// Fungsi untuk menghitung diskon
+Function countDiskon(totalHarga)
+    If totalHarga > 500000 then
+        Return totalHarga * 15%
+    Else If totalHarga > 300000 then
+        Return totalHarga * 10%
+    Else If totalHarga > 100000 then
+        Return totalHarga * 5%
+    Else
+        Return 0
+    End If
+End Function
+
+End
