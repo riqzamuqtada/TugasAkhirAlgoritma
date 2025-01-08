@@ -35,7 +35,7 @@ Aplikasi Kasir Sederhana adalah program berbasis console yang dibuat menggunakan
     |-- Produk.java          // Dataclass kedua untuk produk yang dijual
     |-- Validation.java      // Kelas yang berfungsi untuk memvalidsi dari input yang dimasukan
 ```
-Untuk struktur proyek lebih detail bisa nelihat :
+Untuk struktur proyek lebih detail bisa melihat :
 ```
 Psudocode.txt
 ```
