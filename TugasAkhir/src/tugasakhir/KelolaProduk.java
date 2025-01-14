@@ -53,7 +53,7 @@ public class KelolaProduk {
                 String keterangan = Utility.emptyInput("Berikan keterangan : ");
                 listProduk.add(new Produk(nama, type, harga, stok, keterangan));
                 String type2 = (type==0)?"Produk":"Treatment"; 
-                System.out.println("-- "+type2+" berhasil ditambahkan --s");
+                System.out.println("-- "+type2+" berhasil ditambahkan --");
                 
             } catch (Exception e) {
                 System.err.println("Error : " + e.getMessage());
