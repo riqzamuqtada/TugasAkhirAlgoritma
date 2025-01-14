@@ -17,7 +17,7 @@ Aplikasi Kasir Sederhana adalah program berbasis console yang dibuat menggunakan
 
 1. download TugasAkhirAlgoritma.exe yang ada dalam repository ini
    ```bash
-   TugasAkhirAlgoritma.exe
+   results\TugasAkhirAlgoritma.exe
    ```
 2. Aplikasi dapat digunakan secara langsung
 3. Jika ada peringatan dari windows
@@ -36,7 +36,7 @@ Aplikasi Kasir Sederhana adalah program berbasis console yang dibuat menggunakan
 ```
 Untuk struktur proyek lebih detail bisa melihat :
 ```
-Psudocode.txt
+results\Psudocode.txt
 ```
 
 ## Contoh Tampilan
