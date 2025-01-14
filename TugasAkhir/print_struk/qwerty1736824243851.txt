@@ -1,0 +1,17 @@
+
++ - - - - - - - - - - - - - - - - - - - - - +
+|              STRUK PEMBELIAN            |
++ - - - - - - - - - - - - - - - - - - - - - +
+| Tanggal         : 14-01-2025              |
+| Nama Pelanggan  : qwerty                  |
+| Nama Produk     : Facial RF               |
+| Harga Produk    : Rp 250000               |
+| Jumlah          : 1                       |
+| Diskon          : 5%                      |
++ - - - - - - - - - - - - - - - - - - - - - +
+| Total Harga     : Rp 250000               |
+| Potongan Diskon : Rp 12500                |
+| Total Bayar     : Rp 237500               |
++ - - - - - - - - - - - - - - - - - - - - - +
+|      Terima kasih atas pembelian Anda!    |
++ - - - - - - - - - - - - - - - - - - - - - +
