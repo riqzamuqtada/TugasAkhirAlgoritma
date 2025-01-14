@@ -1,0 +1,125 @@
+START
+    DEKLARASI
+        boolean isRunning = true
+        boolean menuAktif
+        InputStreamReader r = InputStreamReader(System.in)
+        BufferedReader input = BufferedReader(r)
+        ArrayList<Transaksi> listTransaksi = ArrayList<Transaksi>()
+
+    PROCEDURE main()
+        WHILE isRunning
+            mainMenu()
+        END WHILE
+    END PROCEDURE
+
+    PROCEDURE mainMenu()
+        Utility.clearConsole()
+        TAMPILKAN "-------------------------------------------------------"
+        TAMPILKAN "== Selamat Datang di Aplikasi Kasir Elra Skin Clinic ==\n"
+        TAMPILKAN "Silahkan pilih menu yang tersedia:"
+        TAMPILKAN "[1] Kelola Transaksi"
+        TAMPILKAN "[2] Kelola Produk"
+        TAMPILKAN "[3] Keluar"
+        TAMPILKAN "-------------------------------------------------------"
+        int selectedMenu = Utility.number("Pilih menu>> ")
+
+        SWITCH selectedMenu
+            CASE 1:
+                menuAktif = true
+                menuTransaksi()
+            CASE 2:
+                menuAktif = true
+                menuProduk()
+            CASE 3:
+                keluar()
+            DEFAULT:
+                TAMPILKAN "Pilih menu yang tersedia!" (error)
+        END SWITCH
+    END PROCEDURE
+
+    PROCEDURE menuTransaksi()
+        WHILE menuAktif
+            TAMPILKAN "-------------------------------------------------------"
+            TAMPILKAN "===== Menu Transaksi =====\n"
+            TAMPILKAN "[1] Lihat semua transaksi"
+            TAMPILKAN "[2] Buat transaksi"
+            TAMPILKAN "[3] Edit transaksi"
+            TAMPILKAN "[4] Hapus transaksi"
+            TAMPILKAN "[5] Hapus semua transaksi"
+            TAMPILKAN "[6] Cetak struk"
+            TAMPILKAN "[7] Clear"
+            TAMPILKAN "[8] Kembali"
+            TAMPILKAN "-------------------------------------------------------"
+            int selectedMenu = Utility.number("Pilih menu>> ")
+
+            SWITCH selectedMenu
+                CASE 1:
+                    KelolaTransaksi.showAll()
+                CASE 2:
+                    KelolaTransaksi.create()
+                CASE 3:
+                    KelolaTransaksi.update()
+                CASE 4:
+                    KelolaTransaksi.delete()
+                CASE 5:
+                    KelolaTransaksi.deleteAll()
+                CASE 6:
+                    KelolaTransaksi.cetakStruk()
+                CASE 7:
+                    Utility.clearConsole()
+                CASE 8:
+                    menuAktif = false
+                CASE 9:
+                    dataDummy()
+                DEFAULT:
+                    TAMPILKAN "Pilih menu yang tersedia!" (error)
+            END SWITCH
+        END WHILE
+    END PROCEDURE
+
+    PROCEDURE menuProduk()
+        WHILE menuAktif
+            TAMPILKAN "-------------------------------------------------------"
+            TAMPILKAN "===== Menu Produk =====\n"
+            TAMPILKAN "[1] Lihat semua produk"
+            TAMPILKAN "[2] Buat produk"
+            TAMPILKAN "[3] Edit produk"
+            TAMPILKAN "[4] Hapus produk"
+            TAMPILKAN "[5] Hapus semua produk"
+            TAMPILKAN "[6] Clear"
+            TAMPILKAN "[7] Kembali"
+            TAMPILKAN "-------------------------------------------------------"
+            int selectedMenu = Utility.number("Pilih menu>> ")
+
+            SWITCH selectedMenu
+                CASE 1:
+                    KelolaProduk.showAll()
+                CASE 2:
+                    KelolaProduk.create()
+                CASE 3:
+                    KelolaProduk.update()
+                CASE 4:
+                    KelolaProduk.delete()
+                CASE 5:
+                    KelolaProduk.deleteAll()
+                CASE 6:
+                    Utility.clearConsole()
+                CASE 7:
+                    menuAktif = false
+                CASE 8:
+                    dataDummy()
+                DEFAULT:
+                    TAMPILKAN "Pilih menu yang tersedia!" (error)
+            END SWITCH
+        END WHILE
+    END PROCEDURE
+
+    PROCEDURE keluar()
+        TAMPILKAN "Apakah anda yakin ingin keluar? (y/t) : "
+        String jawab = Utility.emptyInput("")
+        boolean konfirmasi = (jawab.equalsIgnoreCase("y"))
+        IF konfirmasi THEN
+            isRunning = false
+        END IF
+    END PROCEDURE
+END PROGRAM
