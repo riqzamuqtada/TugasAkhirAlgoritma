@@ -97,7 +97,7 @@ public class KelolaTransaksi {
                         if (p.getStok() > 0) {
                             while (ulang) {
                                 int jumlah = Utility.number("Berapa jumlahnya? : ");
-                                if (p.getStok() > jumlah) {
+                                if (p.getStok() >= jumlah) {
                                     String tanggal = Utility.getInputTanggal();
                                     listTransaksi.add(new Transaksi(nama, idProduk, jumlah, tanggal));
                                     p.editStok(p.getStok()-jumlah);
